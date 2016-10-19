@@ -136,24 +136,54 @@ public class GameTest {
 		values.add("M");
 		values.add("26");
 		values.add("Stockholm");
-		game.getGenderFromInputValues(values);
-		assertEquals("Gender should be M", values.get(3).charAt(0), 'M');
+		char kon =game.getGenderFromInputValues(values);
+		assertEquals("Gender should be M",kon , 'M');
 	}
-	
-	
-	
-	
-	
-	
+	@Test
+	public void testMethod21() {
+		Game game = new Game();
+		ArrayList<String> age = new ArrayList<String>();
+		age.add("22");
+		age.add("23");
+		age.add("24");
+		age.add("25");
+		age.add("26");
+		age.add("27");
+		int alder=game.getAgeFromInputValues(age);
+		assertEquals("Age should be 26", alder, 26);
+		
+		
+		
+	}
+	@Test
+	public void testMethod22() {
+		Game game = new Game();
+		game.runGame("Game", "Viktor", "Lofgren", 'M', 26, "Stockholm");
+	}
+		
+		
 	
 	@Test
-	public void testMethod21(){
+	public void testMethod23(){
 	Conversor conversor = new Conversor();
 	ResultFromInputs results = new ResultFromInputs();
 	Game game = new Game ();
 	
 	game.buildFinalString("Viktor", "Lofgren", results, conversor);
 	
+	}
+	@Test
+	public void testMethod24(){
+		Game game = new Game();
+		ArrayList<String> values = new ArrayList<String>();
+		values.add("Game1");
+		values.add("Viktor");
+		values.add("Lofgren");
+		values.add("M");
+		values.add("26");
+		values.add("Stockholm");
+		
+		game.run(values);
 	}
 
 
